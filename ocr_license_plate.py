@@ -29,10 +29,8 @@ args = vars(ap.parse_args())
 # initialize our ANPR class
 anpr = PyImageSearchANPR(debug=args["debug"] > 0)
 
-# grab all image paths in the input directory
 imagePaths = sorted(list(paths.list_images(args["input"])))
 
-# loop over all image paths in the input directory
 for imagePath in imagePaths:
 	# load the input image from disk and resize it
 	image = cv2.imread(imagePath)
